@@ -1,0 +1,64 @@
+$primary-color: #2F80ED;
+$secondary-color: #E0E0E0;
+.steps, .step__point {
+  display: flex;
+  justify-content: space-between;
+}
+.step__header {
+  text-align: center;
+  margin-top: auto;
+}
+.step {
+  flex: 1;
+  margin-top: auto;
+
+  &:first-child {
+    .pre-line {
+      visibility: hidden;
+    }
+  }
+  &:last-child {
+    .post-line {
+      visibility: hidden;
+    }
+  }
+}
+.point {
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: $secondary-color;
+  border: 1px solid transparent;
+  transition: background 1s ease;
+}
+.pre-line, .post-line {
+  height: 1px;
+  width: 100%;
+  background: $secondary-color;
+  margin-top: 18px;
+  transition: background 1s ease;
+}
+.active {
+  .point {
+    border: 1px solid $primary-color;
+  }
+  .pre-line {
+    background: $primary-color;
+  }
+}
+.done {
+  .point {
+    background-color: $primary-color;
+  }
+  .pre-line, .post-line {
+    background: $primary-color;
+  }
+}
+.inactive {
+
+}
+button {
+  height: 34px;
+  padding: 0 25px;
+}

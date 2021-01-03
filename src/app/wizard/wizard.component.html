@@ -1,0 +1,32 @@
+<div class="steps">
+  <div class="step" *ngFor='let step of steps' [ngClass]='getClassName(step.Status)'>
+    <div class="step__header" [innerHtml]='step.Header'></div>
+    <div class="step__point">
+      <div class="pre-line"></div>
+      <div class="point"></div>
+      <div class="post-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="forms">
+  <ng-container [ngSwitch]='currentStep'>
+    <div class="form" *ngSwitchCase='1'>
+      <p>
+        Form 1
+      </p>
+    </div>
+    <div class="form" *ngSwitchCase='2'>
+      <p>
+        Form 2
+      </p>
+    </div>
+    <div class="form" *ngSwitchCase='3'>
+      <p>
+        Form 3
+      </p>
+    </div>
+  </ng-container>
+
+  <button (click)='next()'>Next</button>
+</div>
